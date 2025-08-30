@@ -76,9 +76,9 @@ local function run_in_terminal()
   -- Build the command
   local cmd
   if platform_config.is_windows then
-    cmd = string.format('%s & %s %s', activate_script, python_exe, current_file)
+    cmd = string.format('cls & %s & %s %s', activate_script, python_exe, current_file)
   else
-    cmd = string.format('source %s && %s %s', activate_script, python_exe, current_file)
+    cmd = string.format('clear && source %s && %s %s', activate_script, python_exe, current_file)
   end
 
   command.perform("terminal:execute", cmd)
